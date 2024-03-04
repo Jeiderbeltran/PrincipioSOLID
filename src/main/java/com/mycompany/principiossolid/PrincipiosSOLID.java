@@ -8,9 +8,13 @@ package com.mycompany.principiossolid;
  *
  * @author sala8
  */
+import com.mycompany.principiossolid.lsk.Configuracion;
 public class PrincipiosSOLID {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+  
+        Configuracion configuracion = new Configuracion();
+        configuracion.cargarConfiguracion();
+        configuracion.salvarConfiguracion();
     }
 }
