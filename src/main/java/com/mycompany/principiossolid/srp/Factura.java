@@ -19,19 +19,23 @@ public class Factura {
     public float importeDeduccion;
     public float importeTotal;
     public int porcentajeDeduccion;
+
+    private CalculadoraDeduccion calculadoraDeduccion;
+    private CalculadoraIVA calculadoraIVA;
+
+    public Factura(CalculadoraDeduccion calculadoraDeduccion, CalculadoraIVA calculadoraIVA) {
+        this.calculadoraDeduccion = calculadoraDeduccion;
+        this.calculadoraIVA = calculadoraIVA;
+    }
+
     // Método que calcula el total de la factura
-
     public void calcularTotal() {
-
-        if (codigo.equals("0")) {
-            importeIVA = 0; // No se aplica IVA
-        } else {
-            importeIVA = new CalculadoraIVA().calcular(importeFactura);
-        }
         // Calculamos la deducción
-        importeDeduccion = (importeFactura * porcentajeDeduccion) / 100;
+        importeDeduccion = calculadoraDeduccion.calcular(importeFactura, porcentajeDeduccion);
+
         // Calculamos el IVA
-        importeIVA = (float) (importeFactura * 0.16);
+        importeIVA = calculadoraIVA.calcular(importeFactura);
+
         // Calculamos el total
         importeTotal = (importeFactura - importeDeduccion) + importeIVA;
     }
