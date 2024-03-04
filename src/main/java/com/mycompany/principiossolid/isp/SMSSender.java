@@ -12,6 +12,5 @@ public class SMSSender {
 
     public static void sendSMS(ContactInformation c, String message) {
          String phoneNumber = c.getTelephone();
-       //Envía un mensaje SMS al teléfono del Contacto  c.  
     }
 }
