@@ -8,11 +8,12 @@ package com.mycompany.principiossolid.lsk;
  *
  * @author sala8
  */
-    public class ConfiguracionHoraria implements RecursoPersistente{
- public void load(){
-System.out.println("Configuracion horaria cargada");
- }
- public void save() {
-System.out.println("ERROR, la hora no se puede almacenar, es solo de lectura");
-}
+    public class ConfiguracionHoraria implements RecursoPersistente {
+    public void load() {
+        System.out.println("Configuracion horaria cargada");
+    }
+
+    public void save() {
+        System.out.println("ERROR: No se puede almacenar la configuracion horaria, es solo de lectura");
+    }
 }
