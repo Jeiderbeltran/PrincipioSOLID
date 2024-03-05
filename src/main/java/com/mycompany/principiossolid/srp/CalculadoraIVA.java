@@ -9,5 +9,8 @@ package com.mycompany.principiossolid.srp;
  * @author sala8
  */
 public class CalculadoraIVA {
-    
+    public float calcular(float importeFactura) {
+        // 16% de IVA
+        return (float) (importeFactura * 0.18);
+    }
 }

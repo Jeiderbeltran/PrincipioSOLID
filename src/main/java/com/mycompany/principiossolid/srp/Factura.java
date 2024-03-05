@@ -22,6 +22,12 @@ public class Factura {
     // Método que calcula el total de la factura
 
     public void calcularTotal() {
+
+        if (codigo.equals("0")) {
+            importeIVA = 0; // No se aplica IVA
+        } else {
+            importeIVA = new CalculadoraIVA().calcular(importeFactura);
+        }
         // Calculamos la deducción
         importeDeduccion = (importeFactura * porcentajeDeduccion) / 100;
         // Calculamos el IVA
